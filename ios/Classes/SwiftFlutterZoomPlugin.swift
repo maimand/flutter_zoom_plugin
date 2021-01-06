@@ -254,13 +254,16 @@ public class ZoomView: NSObject, FlutterPlatformView, MobileRTCMeetingServiceDel
             
             let arguments = call.arguments as! Dictionary<String, String?>
             
-            meetingSettings?.disableDriveMode(parseBoolean(data: arguments["disableDrive"]!, defaultValue: false))
+            meetingSettings?.disableDriveMode = (parseBoolean(data: arguments["disableDrive"]!, defaultValue: false))
             meetingSettings?.disableCall(in: parseBoolean(data: arguments["disableDialIn"]!, defaultValue: false))
             meetingSettings?.setAutoConnectInternetAudio(parseBoolean(data: arguments["noDisconnectAudio"]!, defaultValue: false))
             meetingSettings?.setMuteAudioWhenJoinMeeting(parseBoolean(data: arguments["noAudio"]!, defaultValue: false))
             meetingSettings?.meetingShareHidden = parseBoolean(data: arguments["disableShare"]!, defaultValue: false)
             meetingSettings?.meetingInviteHidden = parseBoolean(data: arguments["disableDrive"]!, defaultValue: false)
-       
+            meetingSettings?.setMuteVideoWhenJoinMeeting(parseBoolean(data: arguments["noVideo"]!, defaultValue: false))
+            meetingSettings?.meetingInviteHidden = parseBoolean(data: arguments["noCamera"]!, defaultValue: false)
+            meetingSettings?.meetingMoreHidden = true;
+            
             var params = [
                 kMeetingParam_Username: arguments["userId"]!!,
                 kMeetingParam_MeetingNumber: arguments["meetingId"]!!

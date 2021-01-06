@@ -5,13 +5,15 @@ import 'package:flutter_zoom_plugin_example/meeting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_plugin_example/start_meeting_screen.dart';
 
+import 'meeting_voice_with_camera_screen.dart';
+import 'meeting_voice_with_no_camera_screen.dart';
+
 class JoinWidget extends StatefulWidget {
   @override
   _JoinWidgetState createState() => _JoinWidgetState();
 }
 
 class _JoinWidgetState extends State<JoinWidget> {
-
   TextEditingController meetingIdController = TextEditingController();
   TextEditingController meetingPasswordController = TextEditingController();
 
@@ -56,8 +58,8 @@ class _JoinWidgetState extends State<JoinWidget> {
                     return RaisedButton(
                       // If onPressed is null, the button is disabled
                       // this is my goto temporary callback.
-                      onPressed: () => joinMeeting(context),
-                      child: Text('Join'),
+                      onPressed: () => joinVideoMeeting(context),
+                      child: Text('Join Video'),
                     );
                   },
                 ),
@@ -70,8 +72,22 @@ class _JoinWidgetState extends State<JoinWidget> {
                     return RaisedButton(
                       // If onPressed is null, the button is disabled
                       // this is my goto temporary callback.
-                      onPressed: () => startMeeting(context),
-                      child: Text('Start Meeting'),
+                      onPressed: () => joinVoiceMeeting(context),
+                      child: Text('Join Voice with camera'),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Builder(
+                  builder: (context) {
+                    // The basic Material Design action button.
+                    return RaisedButton(
+                      // If onPressed is null, the button is disabled
+                      // this is my goto temporary callback.
+                      onPressed: () => joinNoCameraVoiceMeeting(context),
+                      child: Text('Join Voice with no camera'),
                     );
                   },
                 ),
@@ -83,22 +99,34 @@ class _JoinWidgetState extends State<JoinWidget> {
     );
   }
 
-
-  joinMeeting(BuildContext context) {
+  joinVoiceMeeting(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return MeetingWidget(meetingId: meetingIdController.text, meetingPassword: meetingPasswordController.text);
+          return VoiceMeetingWidget(
+              meetingId: '3858403162', meetingPassword: '3sbd4t');
         },
       ),
     );
   }
 
-  startMeeting(BuildContext context) {
+  joinVideoMeeting(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return StartMeetingWidget(meetingId: meetingIdController.text);
+          return MeetingWidget(
+              meetingId: '3858403162', meetingPassword: '3sbd4t');
+        },
+      ),
+    );
+  }
+
+  joinNoCameraVoiceMeeting(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return NoCameraVoiceMeetingWidget(
+              meetingId: '3858403162', meetingPassword: '3sbd4t');
         },
       ),
     );

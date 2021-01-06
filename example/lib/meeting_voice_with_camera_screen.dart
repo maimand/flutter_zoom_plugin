@@ -6,14 +6,14 @@ import 'package:flutter_zoom_plugin/zoom_options.dart';
 
 import 'package:flutter/material.dart';
 
-class MeetingWidget extends StatelessWidget {
+class VoiceMeetingWidget extends StatelessWidget {
 
   ZoomOptions zoomOptions;
   ZoomMeetingOptions meetingOptions;
 
   Timer timer;
 
-  MeetingWidget({Key key, meetingId, meetingPassword}) : super(key: key) {
+  VoiceMeetingWidget({Key key, meetingId, meetingPassword}) : super(key: key) {
     this.zoomOptions = new ZoomOptions(
       domain: "zoom.us",
       appKey: "A5MERlrzvmY5d2LFqEVpvg9c38NSbPUZplEL",
@@ -29,7 +29,7 @@ class MeetingWidget extends StatelessWidget {
         disableShare: "true",
         noAudio: "false",
         noDisconnectAudio: "true",
-        noVideo: "false",
+        noVideo: "true",
         noCamera: "false"
     );
   }
