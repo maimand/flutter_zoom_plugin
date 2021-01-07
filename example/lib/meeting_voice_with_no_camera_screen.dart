@@ -30,8 +30,9 @@ class NoCameraVoiceMeetingWidget extends StatelessWidget {
         noAudio: "false",
         noDisconnectAudio: "true",
         noVideo: "true",
-        noCamera: "true"
-    );
+        noCamera: "true",
+        customMeetingTitle: "There is a meeting."
+        );
   }
 
   bool _isMeetingEnded(String status) {

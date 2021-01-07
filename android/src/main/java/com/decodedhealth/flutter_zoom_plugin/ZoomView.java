@@ -137,12 +137,21 @@ public class ZoomView  implements PlatformView,
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
         opts.no_video = parseBoolean(options, "noVideo", false);
+        opts.custom_meeting_id = options.get("customMeetingTitle") != null ? options.get("customMeetingTitle") : "Heatlh Personas Meeting";
+        
+        
 
-        opts.meeting_views_options = MeetingViewsOptions.NO_BUTTON_MORE;
+        opts.meeting_views_options = MeetingViewsOptions.NO_BUTTON_MORE 
+                                    + MeetingViewsOptions.NO_TEXT_PASSWORD;
         // whether  it has video button or not
         if(parseBoolean(options, "noCamera", false)){
             opts.meeting_views_options += MeetingViewsOptions.NO_BUTTON_VIDEO;
         }
+        // whether it has ID show in Title
+        if(parseBoolean(options, "noIDShow", false)){
+            opts.meeting_views_options += MeetingViewsOptions.NO_TEXT_MEETING_ID;
+        }
+
         
         JoinMeetingParams params = new JoinMeetingParams();
 

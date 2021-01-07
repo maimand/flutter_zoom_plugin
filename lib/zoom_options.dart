@@ -22,6 +22,8 @@ class ZoomMeetingOptions {
   String noAudio;
   String noVideo;
   String noCamera;
+  String customMeetingTitle;
+  String noIDShow;
 
   ZoomMeetingOptions(
       {this.userId,
@@ -37,5 +39,7 @@ class ZoomMeetingOptions {
       this.noDisconnectAudio,
       this.noAudio,
       this.noVideo,
-      this.noCamera});
+      this.noCamera,
+      this.customMeetingTitle,
+      this.noIDShow});
 }

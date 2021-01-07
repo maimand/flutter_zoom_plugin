@@ -30,7 +30,8 @@ class MeetingWidget extends StatelessWidget {
         noAudio: "false",
         noDisconnectAudio: "true",
         noVideo: "false",
-        noCamera: "false"
+        noCamera: "false", 
+        customMeetingTitle: "There is a meeting.",
     );
   }
 
