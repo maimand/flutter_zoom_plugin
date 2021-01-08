@@ -194,8 +194,8 @@ public class ZoomView  implements PlatformView,
         params.displayName = options.get("displayName");
         params.meetingNo = options.get("meetingId");
 		params.userType = MeetingService.USER_TYPE_API_USER;
-		params.zoomToken = options.get("zoomToken");
-		params.zoomAccessToken = options.get("zoomAccessToken");
+		// params.zoomToken = options.get("zoomToken");
+		// params.zoomAccessToken = options.get("zoomAccessToken");
 		
         meetingService.startMeetingWithParams(context, params, opts);
 

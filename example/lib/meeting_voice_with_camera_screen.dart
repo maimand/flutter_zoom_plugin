@@ -30,8 +30,6 @@ class VoiceMeetingWidget extends StatelessWidget {
         noAudio: "false",
         noDisconnectAudio: "true",
         noVideo: "true",
-        noCamera: "false",
-        noIDShow: "true",
         customMeetingTitle: "There is a meeting."
     );
   }
