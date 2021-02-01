@@ -32,14 +32,13 @@ class ZoomMeetingOptions {
       this.meetingPassword,
       this.zoomToken,
       this.zoomAccessToken,
-      this.disableDialIn,
-      this.disableDrive,
-      this.disableInvite,
-      this.disableShare,
-      this.noDisconnectAudio,
-      this.noAudio,
-      this.noVideo,
-      this.noCamera,
+      this.disableDialIn = 'true',
+      this.disableDrive = 'true',
+      this.disableInvite = 'true',
+      this.disableShare = 'true',
+      this.noDisconnectAudio = 'true',
+      this.noAudio = 'false',
+      this.noVideo = 'false',
       this.customMeetingTitle,
-      this.noIDShow});
+      });
 }
