@@ -32,7 +32,34 @@ typedef NS_ENUM(NSUInteger, MobileRTCAuthError) {
     MobileRTCAuthError_NetworkIssue,
     ///Account does not support this SDK version
     MobileRTCAuthError_ClientIncompatible,
+};
 
+/*!
+ @brief An enumeration of SDK login.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCLoginFailReason) {
+    ///login is successful.
+    MobileRTCLoginFailReason_Success,
+    ///Email login disabled.
+    MobileRTCLoginFailReason_EmailLoginDiable,
+    ///User not exist.
+    MobileRTCLoginFailReason_UserNotExist,
+    ///Password is wrong.
+    MobileRTCLoginFailReason_WrongPassword,
+    ///Account is locked.
+    MobileRTCLoginFailReason_AccountLocked,
+    ///SDK need update.
+    MobileRTCLoginFailReason_SDKNeedUpdate,
+    ///Attemps too many times.
+    MobileRTCLoginFailReason_TooManyFailedAttempts,
+    ///SMS code error.
+    MobileRTCLoginFailReason_SMSCodeError,
+    ///SMS code expired.
+    MobileRTCLoginFailReason_SMSCodeExpired,
+    ///Phone number format invalid.
+    MobileRTCLoginFailReason_PhoneNumberFormatInValid ,
+    ///Login fail other reason.
+    MobileRTCLoginFailReason_OtherIssue = 100,
 };
 
 /*!

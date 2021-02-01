@@ -123,8 +123,15 @@
 /*!
  @brief Specify to get the response of MobileRTC logs in.
  @param returnValue Notify the user when the login state has changed.
+ @warning will deprecated,please replace with "- (void)onMobileRTCLoginResult:(MobileRTCLoginFailReason)resultValue".
  */
-- (void)onMobileRTCLoginReturn:(NSInteger)returnValue;
+- (void)onMobileRTCLoginReturn:(NSInteger)returnValue DEPRECATED_ATTRIBUTE;
+
+/*!
+ @brief Specify to get the response of MobileRTC logs in.
+ @param returnValue Notify the user when the login state has changed.
+ */
+- (void)onMobileRTCLoginResult:(MobileRTCLoginFailReason)resultValue;
 
 /*!
  @brief Specify to get the response of MobileRTC logs out.

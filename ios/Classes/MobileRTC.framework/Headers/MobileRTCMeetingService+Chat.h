@@ -9,10 +9,12 @@
 #import <MobileRTC/MobileRTC.h>
 
 typedef enum {
-    ///All the members in the group. 
+    ///Chat to all participants in the meeting. 
     MobileRTCChatGroup_All                   = 0,
-    ///Panelists.
-    MobileRTCChatGroup_Panelists              = 1,
+    ///Chat to panelists in the webinar.
+    MobileRTCChatGroup_Panelists             = 1,
+    ///Chat to waiting room user
+    MobileRTCChatGroup_SilentModeUsers       = 2,
 }MobileRTCChatGroup;
 
 @interface MobileRTCMeetingService (Chat)

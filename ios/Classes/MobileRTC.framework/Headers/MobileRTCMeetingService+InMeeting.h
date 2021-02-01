@@ -234,6 +234,27 @@
  */
 - (void)showMeetingControlBar;
 
+/*!
+ @brief Switch to active scene.The sequence of video frames is { drive scene(only iPhone), active scene, gallery scene(if has)}
+ @warning The zoom meeting UI is only valid, the customized UI is invalid.
+ @warning Both the iPad and the iPhone can use this method
+ */
+- (void)switchToActiveSpeaker;
+
+/*!
+ @brief Switch to gallery scene.The sequence of video frames is { drive scene(only iPhone), active scene, gallery scene(if has)}
+ @warning The zoom meeting UI is only valid, the customized UI is invalid.
+ @warning Both the iPad and the iPhone can use this method
+ */
+- (void)switchToVideoWall;
+
+/*!
+ @brief Switch to drive scene.The sequence of video frames is { drive scene(only iPhone), active scene, gallery scene(if has)}
+ @warning The zoom meeting UI is only valid, the customized UI is invalid.
+ @warning Only iPhone can use this method
+ */
+- (void)switchToDriveScene;
+
 #pragma mark - Q&A Related
 /*!
  @brief Query if Q&A is enabled.
