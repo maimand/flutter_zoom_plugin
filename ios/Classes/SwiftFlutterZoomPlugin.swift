@@ -261,10 +261,8 @@ public class ZoomView: NSObject, FlutterPlatformView, MobileRTCMeetingServiceDel
             meetingSettings?.meetingShareHidden = parseBoolean(data: arguments["disableShare"]!, defaultValue: false)
             meetingSettings?.meetingInviteHidden = parseBoolean(data: arguments["disableDrive"]!, defaultValue: false)
             meetingSettings?.setMuteVideoWhenJoinMeeting(parseBoolean(data: arguments["noVideo"]!, defaultValue: false))
-            meetingSettings?.meetingVideoHidden = parseBoolean(data: arguments["noCamera"]!, defaultValue: false)
             meetingSettings?.meetingMoreHidden = true;
             meetingSettings?.meetingPasswordHidden = true;
-            meetingSettings?.meetingPasswordHidden = (parseBoolean(data: arguments["noIDShow"]!, defaultValue: false))
             
             var params = [
                 kMeetingParam_Username: arguments["userId"]!!,
