@@ -148,9 +148,7 @@ public class ZoomView  implements PlatformView,
             opts.meeting_views_options += MeetingViewsOptions.NO_BUTTON_VIDEO;
         }
         // whether it has ID show in Title
-        if(parseBoolean(options, "noIDShow", false)){
-            opts.meeting_views_options += MeetingViewsOptions.NO_TEXT_MEETING_ID;
-        }
+        
 
         
         JoinMeetingParams params = new JoinMeetingParams();
