@@ -143,11 +143,7 @@ public class ZoomView  implements PlatformView,
 
         opts.meeting_views_options = MeetingViewsOptions.NO_BUTTON_MORE 
                                     + MeetingViewsOptions.NO_TEXT_PASSWORD;
-        // whether  it has video button or not
-        if(parseBoolean(options, "noCamera", false)){
-            opts.meeting_views_options += MeetingViewsOptions.NO_BUTTON_VIDEO;
-        }
-        // whether it has ID show in Title
+       
         
 
         
